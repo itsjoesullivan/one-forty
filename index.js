@@ -1,4 +1,5 @@
 var context = new OfflineAudioContext(2, 44100, 44100);
+
 module.exports = function(name) {
   return new Promise(function(resolve, reject) {
     var path = paths[name];
