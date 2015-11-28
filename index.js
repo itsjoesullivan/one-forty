@@ -1,17 +1,22 @@
+var context = new OfflineAudioContext(2, 44100, 44100);
 module.exports = function(name) {
-  var path = getPathFromName(name);
-  if (typeof path !== "string") {
-    throw new Error("Invalid impulse response name");
-  }
   return new Promise(function(resolve, reject) {
+    var path = paths[name];
+    if (typeof path !== "string") {
+      reject(new Error("Invalid impulse response name"));
+    }
     var req = new XMLHttpRequest();
-    req.open('GET', , true);
+    req.open('GET', path, true);
     req.responseType = 'arraybuffer';
     req.onload = function(audioData) {
-      pro
+      context.decodeAudioData(audioData, function(buffer) {
+        resolve(buffer);
+      }, function(e) {
+        reject(e);
+      });
     };
     req.send();
-  };
+  });
 };
 
 var paths = {
@@ -31,7 +36,3 @@ var paths = {
   "medium-4": "http://107.170.189.108/emt-140/medium-4.wav",
   "medium-5": "http://107.170.189.108/emt-140/medium-5.wav"
 };
-
-function getPathFromName(name) {
-  return paths[name];
-}
