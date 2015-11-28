@@ -1,6 +1,6 @@
 ## one-forty
 
-This is a wrapper around Greg Hopkins' EMT 140 Plate Reverb impulse response set, located [here](http://www.hopkinsmediaservices.com/ir).
+This is a wrapper around Greg Hopkins' awesome EMT 140 Plate Reverb impulse response set, located [here](http://www.hopkinsmediaservices.com/ir).
 
 ## Usage
 
