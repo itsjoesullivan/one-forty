@@ -11,7 +11,8 @@ module.exports = function(name) {
       var req = new XMLHttpRequest();
       req.open('GET', path, true);
       req.responseType = 'arraybuffer';
-      req.onload = function(audioData) {
+      req.onload = function() {
+        var audioData = req.response;
         context.decodeAudioData(audioData, function(buffer) {
           paths[name] = buffer;
           resolve(buffer);
