@@ -1,11 +1,11 @@
 {
   "name": "one-forty",
   "version": "1.0.0",
-  "description": "Wrapper for Greg Hopkins' Impulse Response library",
+  "description": "Wrapper around Greg Hopkins' EMT 140 Plate Reverb impulse responses",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "itsjoesullivan",
+  "author": "",
   "license": "ISC"
 }
